@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="noir">
 
 <head>
   <meta charset="UTF-8" />
@@ -23,14 +23,43 @@
     rel="stylesheet">
   <style>
     :root {
-      --paper: #f6f1e8;
-      --paper-2: #fffaf3;
-      --ink: #1b1916;
-      --muted: #6e675f;
-      --accent: #b2442c;
-      --accent-2: #1e4d6b;
-      --line: rgba(27, 25, 22, 0.14);
-      --shadow: 0 24px 60px rgba(27, 25, 22, 0.12);
+      /* Themes: studio | mist | noir */
+      --paper: #f1f3f2;
+      --paper-rgb: 241, 243, 242;
+      --paper-2: #fbfbf8;
+      --paper-2-rgb: 251, 251, 248;
+      --ink: #151716;
+      --ink-rgb: 21, 23, 22;
+      --muted: #626a68;
+      --accent: #2b5f78;
+      --accent-rgb: 43, 95, 120;
+      --accent-2: #2f6f68;
+      --accent-2-rgb: 47, 111, 104;
+      --shadow-rgb: 21, 23, 22;
+      --line: rgba(var(--ink-rgb), 0.14);
+      --shadow: 0 24px 60px rgba(var(--shadow-rgb), 0.12);
+      --paper-glass: rgba(var(--paper-rgb), 0.92);
+      --ink-05: rgba(var(--ink-rgb), 0.05);
+      --ink-35: rgba(var(--ink-rgb), 0.35);
+      --noise-line: rgba(var(--ink-rgb), 0.03);
+      --noise-dot: rgba(var(--ink-rgb), 0.035);
+      --wash-1: rgba(var(--accent-rgb), 0.12);
+      --wash-2: rgba(var(--accent-2-rgb), 0.12);
+      --wash-3: rgba(var(--ink-rgb), 0.08);
+      --accent-08: rgba(var(--accent-rgb), 0.08);
+      --accent-14: rgba(var(--accent-rgb), 0.14);
+      --accent-18: rgba(var(--accent-rgb), 0.18);
+      --accent-30: rgba(var(--accent-rgb), 0.30);
+      --accent-35: rgba(var(--accent-rgb), 0.35);
+      --accent-40: rgba(var(--accent-rgb), 0.40);
+      --accent-45: rgba(var(--accent-rgb), 0.45);
+      --focus-55: rgba(var(--accent-2-rgb), 0.55);
+      --focus-18: rgba(var(--accent-2-rgb), 0.18);
+      --paper-2-92: rgba(var(--paper-2-rgb), 0.92);
+      --nav-knot-border: var(--line);
+      --nav-knot-fill: var(--accent-14);
+      --nav-knot-hover-border: var(--accent-45);
+      --nav-knot-hover-shadow: var(--accent-18);
       --radius: 18px;
       --display: 'Fraunces', 'Times New Roman', serif;
       --body: 'IBM Plex Sans', 'Arial', sans-serif;
@@ -39,6 +68,40 @@
       --space-3: 24px;
       --space-4: 40px;
       --space-5: 64px;
+    }
+
+    :root[data-theme="mist"] {
+      --paper: #eef2f4;
+      --paper-rgb: 238, 242, 244;
+      --paper-2: #ffffff;
+      --paper-2-rgb: 255, 255, 255;
+      --ink: #0f1418;
+      --ink-rgb: 15, 20, 24;
+      --muted: #5c6a74;
+      --accent: #3a6ea5;
+      --accent-rgb: 58, 110, 165;
+      --accent-2: #4c7f7a;
+      --accent-2-rgb: 76, 127, 122;
+      --shadow-rgb: 15, 20, 24;
+    }
+
+    :root[data-theme="noir"] {
+      --paper: #0f1215;
+      --paper-rgb: 15, 18, 21;
+      --paper-2: #171b20;
+      --paper-2-rgb: 23, 27, 32;
+      --ink: #f2f4f7;
+      --ink-rgb: 242, 244, 247;
+      --muted: #9aa5b1;
+      --accent: #c49a58;
+      --accent-rgb: 196, 154, 88;
+      --accent-2: #79a9b8;
+      --accent-2-rgb: 121, 169, 184;
+      --shadow-rgb: 0, 0, 0;
+      --nav-knot-border: rgba(var(--accent-rgb), 0.7);
+      --nav-knot-fill: rgba(var(--accent-rgb), 0.35);
+      --nav-knot-hover-border: rgba(var(--accent-rgb), 0.9);
+      --nav-knot-hover-shadow: rgba(var(--accent-rgb), 0.28);
     }
 
     * {
@@ -66,9 +129,9 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(1200px 640px at 10% 0%, rgba(178, 68, 44, 0.12), transparent 60%),
-        radial-gradient(900px 520px at 90% 12%, rgba(30, 77, 107, 0.12), transparent 62%),
-        radial-gradient(800px 600px at 50% 100%, rgba(27, 25, 22, 0.08), transparent 65%);
+        radial-gradient(1200px 640px at 10% 0%, var(--wash-1), transparent 60%),
+        radial-gradient(900px 520px at 90% 12%, var(--wash-2), transparent 62%),
+        radial-gradient(800px 600px at 50% 100%, var(--wash-3), transparent 65%);
       z-index: -2;
       pointer-events: none;
     }
@@ -78,14 +141,15 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(0deg, rgba(27, 25, 22, 0.03) 1px, transparent 1px),
-        radial-gradient(rgba(27, 25, 22, 0.035) 0.5px, transparent 0.5px);
+        linear-gradient(0deg, var(--noise-line) 1px, transparent 1px),
+        radial-gradient(var(--noise-dot) 0.5px, transparent 0.5px);
       background-size: 100% 6px, 3px 3px;
       opacity: 0.35;
       mix-blend-mode: multiply;
       z-index: -1;
       pointer-events: none;
     }
+
 
     a {
       color: inherit;
@@ -130,10 +194,11 @@
       }
     }
 
+
     header.top-nav {
       position: sticky;
       top: 0;
-      background: rgba(246, 241, 232, 0.92);
+      background: var(--paper-glass);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
       z-index: 10;
@@ -143,31 +208,24 @@
       width: min(1120px, 92vw);
       margin: 0 auto;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
+      justify-content: center;
+      padding: 9px 0 7px;
       color: var(--muted);
       font-weight: 600;
       letter-spacing: 0.02em;
       position: relative;
-      gap: var(--space-3);
+      gap: 6px;
     }
 
-    .brand {
-      display: inline-flex;
+    .nav-stack-top {
+      width: 100%;
+      display: flex;
       align-items: center;
-      gap: 12px;
-      font-family: var(--display);
-      font-weight: 600;
-      font-size: 1.05rem;
-      color: var(--ink);
-    }
-
-    .brand-mark {
-      width: 44px;
-      height: 8px;
-      border-radius: 999px;
-      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      justify-content: center;
+      position: relative;
+      min-height: 18px;
     }
 
     .nav-toggle {
@@ -185,15 +243,48 @@
 
     .nav-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(27, 25, 22, 0.35);
+      border-color: var(--ink-35);
     }
 
     .nav-links {
       display: flex;
       gap: 28px;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.22em;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-knot {
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--nav-knot-border);
+      transform: rotate(45deg);
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .nav-knot::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      background: var(--nav-knot-fill);
+      border-radius: 3px;
+    }
+
+    .nav-knot:hover {
+      transform: rotate(45deg) scale(1.08);
+      border-color: var(--nav-knot-hover-border);
+      box-shadow: 0 6px 14px var(--nav-knot-hover-shadow);
+    }
+
+    .nav-knot:focus-visible {
+      outline: none;
+      border-color: var(--focus-55);
+      box-shadow: 0 0 0 3px var(--focus-18);
     }
 
     .nav-links a {
@@ -239,7 +330,7 @@
       top: -30px;
       font-family: var(--display);
       font-size: clamp(10rem, 22vw, 18rem);
-      color: rgba(27, 25, 22, 0.05);
+      color: var(--ink-05);
       z-index: 0;
       pointer-events: none;
     }
@@ -276,7 +367,40 @@
       height: 8px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(178, 68, 44, 0.18);
+      box-shadow: 0 0 0 4px var(--accent-18);
+      animation: heartbeat 4s ease-out;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 var(--accent-35);
+      }
+
+      8% {
+        transform: scale(1.25);
+        box-shadow: 0 0 0 12px var(--accent-14);
+      }
+
+      16% {
+        transform: scale(1);
+        box-shadow: 0 0 0 4px var(--accent-18);
+      }
+
+      24% {
+        transform: scale(1.18);
+        box-shadow: 0 0 0 10px var(--accent-14);
+      }
+
+      32% {
+        transform: scale(1);
+        box-shadow: 0 0 0 4px var(--accent-18);
+      }
+
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 4px var(--accent-18);
+      }
     }
 
     h1 {
@@ -340,7 +464,7 @@
     .btn.primary {
       background: var(--ink);
       color: var(--paper-2);
-      box-shadow: 0 14px 30px rgba(27, 25, 22, 0.2);
+      box-shadow: 0 14px 30px rgba(var(--shadow-rgb), 0.2);
     }
 
     .btn.outline {
@@ -352,7 +476,7 @@
     .btn.ghost {
       border-color: transparent;
       color: var(--muted);
-      background: rgba(27, 25, 22, 0.05);
+      background: var(--ink-05);
     }
 
     .btn.small {
@@ -401,8 +525,8 @@
     }
 
     .info-card.accent {
-      border-color: rgba(178, 68, 44, 0.3);
-      background: rgba(255, 250, 243, 0.92);
+      border-color: var(--accent-30);
+      background: var(--paper-2-92);
     }
 
     .card-label {
@@ -530,9 +654,9 @@
     }
 
     .tag:hover {
-      border-color: rgba(178, 68, 44, 0.4);
+      border-color: var(--accent-40);
       color: var(--ink);
-      background: rgba(178, 68, 44, 0.08);
+      background: var(--accent-08);
     }
 
     .timeline {
@@ -731,17 +855,16 @@
 <body>
   <header class="top-nav">
     <div class="nav-inner">
-      <div class="brand">
-        <span class="brand-mark"></span>
-        <span class="brand-text">Denizcan Boyraz</span>
+      <div class="nav-stack-top">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       </div>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav class="nav-links" id="primary-navigation">
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a class="nav-knot" href="#top" aria-label="Back to top"></a>
     </div>
   </header>
 
