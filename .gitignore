@@ -35,6 +35,7 @@ out/
 .idea/
 *.swp
 *~
+.claude
 
 # Project-specific
 sys/

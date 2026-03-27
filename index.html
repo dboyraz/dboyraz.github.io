@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="noir">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -14,225 +14,291 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dboyraz.me/" />
   <meta property="og:image" content="https://dboyraz.me/og-image.png" />
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Denizcan Boyraz</title>
   <link rel="icon" type="image/svg+xml" href="wave.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
-  <header class="top-nav">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
     <div class="nav-inner">
-      <div class="nav-stack-top">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
-      </div>
-      <nav class="nav-links" id="primary-navigation">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+      <nav class="nav-menu" id="nav-menu">
         <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="nav-knot" href="#top" aria-label="Back to top"></a>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero" id="top">
-      <div class="hero-text">
-        <div class="status-pill reveal delay-050"><span class="status-dot"></span> Open to opportunities</div>
-        <h1 class="reveal delay-120">Denizcan <span>Boyraz</span></h1>
-        <div class="role reveal delay-180">Computer Engineer · Data & Automation</div>
-        <p class="summary reveal delay-240">Recent computer engineering graduate focused on data and automation. I
-          enjoy turning messy systems into reliable workflows with clear, testable logic.</p>
-        <div class="hero-footer reveal delay-300">
-          <div class="actions">
-            <a class="btn outline" href="https://github.com/dboyraz/" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="btn outline" href="https://linkedin.com/in/dboyraz/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-status reveal">
+          <span class="status-dot"></span>
+          <span>Open to opportunities</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="hero-name-first reveal reveal-delay-1">Denizcan</span>
+          <span class="hero-name-last reveal reveal-delay-2"><em>Boyraz</em></span>
+        </h1>
+        <div class="hero-role reveal reveal-delay-3">Computer Engineer &middot; Data &amp; Automation</div>
+        <p class="hero-summary reveal reveal-delay-4">Recent computer engineering graduate focused on data and
+          automation. I enjoy turning messy systems into reliable workflows with clear, testable logic.</p>
+        <div class="hero-bottom reveal reveal-delay-5">
+          <div class="hero-links">
+            <a class="link-arrow" href="https://github.com/dboyraz/" target="_blank"
+              rel="noopener noreferrer">GitHub</a>
+            <a class="link-arrow" href="https://linkedin.com/in/dboyraz/" target="_blank"
+              rel="noopener noreferrer">LinkedIn</a>
           </div>
-          <div class="quick-facts">
-            <div class="fact">
-              <span class="fact-label">Location</span>
-              <strong><a href="https://youtu.be/vsQrKZcYtqg" target="_blank" rel="noopener noreferrer">Istanbul,
-                  Türkiye</a></strong>
-            </div>
-            <div class="fact">
-              <span class="fact-label">Languages</span>
-              <strong>Turkish (Native)<br>English (Fluent)</strong>
+          <div class="hero-meta">
+            <div class="meta-item">
+              <span class="meta-label">Location</span>
+              <a href="https://youtu.be/vsQrKZcYtqg" target="_blank" rel="noopener noreferrer"
+                class="meta-value">Istanbul, Turkiye</a>
             </div>
           </div>
         </div>
       </div>
-
       <div class="hero-aside">
-        <article class="info-card reveal delay-150">
-          <div class="card-label">About Me</div>
+        <div class="hero-card reveal reveal-delay-3">
+          <span class="hero-card-label">Focus Areas</span>
           <p>I build dependable systems for data and automation, with a focus on clarity, repeatability, and fast
             iteration.</p>
           <div class="pill-row">
-            <span class="pill">Machine Learning</span>
+            <span class="pill">Data Engineering</span>
+            <span class="pill">ML Engineering</span>
+            <span class="pill">Data Analytics</span>
             <span class="pill">Automation</span>
-            <span class="pill">Data Engineering & Analytics</span>
           </div>
-        </article>
-        <article class="info-card accent reveal delay-220">
-          <div class="card-label">Contact</div>
-          <p class="contact-copy">Open to software engineering roles in data, automation, and platform work.</p>
-          <div class="contact-actions actions">
-            <a class="btn small primary" href="mailto:denizcan.boyraz@gmail.com">Email</a>
-            <a class="btn small outline" href="https://linkedin.com/in/dboyraz/" target="_blank"
+        </div>
+        <div class="hero-card hero-card-accent reveal reveal-delay-4">
+          <span class="hero-card-label">Get in Touch</span>
+          <p>Open to software engineering roles in data, automation, and platform work.</p>
+          <div class="hero-card-actions">
+            <a class="btn btn-primary btn-sm" href="mailto:denizcan.boyraz@gmail.com">Email Me</a>
+            <a class="btn btn-outline btn-sm" href="https://linkedin.com/in/dboyraz/" target="_blank"
               rel="noopener noreferrer">LinkedIn</a>
           </div>
+        </div>
+      </div>
+      <div class="scroll-hint reveal reveal-delay-5" aria-hidden="true">
+        <span class="scroll-hint-line"></span>
+        <span class="scroll-hint-text">Scroll</span>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="skills">
+      <div class="section-header reveal">
+        <span class="section-number">01</span>
+        <div class="section-title-group">
+          <span class="section-label">Skills</span>
+          <h2>Technical Focus</h2>
+          <p class="section-lead">I focus on programming fundamentals and tooling to deliver dependable software.</p>
+        </div>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <h3>Focus Areas</h3>
+          <div class="tag-row">
+            <span class="tag">Data Engineering</span>
+            <span class="tag">ML Engineering</span>
+            <span class="tag">Data Analytics</span>
+            <span class="tag">Automation</span>
+          </div>
+        </article>
+        <article class="skill-card reveal reveal-delay-1">
+          <h3>Languages</h3>
+          <p class="skill-inline">Turkish (Native), English (Fluent/Professional)</p>
+        </article>
+        <article class="skill-card reveal reveal-delay-2">
+          <h3>Programming Languages</h3>
+          <div class="tag-row">
+            <span class="tag">Java</span>
+            <span class="tag">Python</span>
+            <span class="tag">C</span>
+            <span class="tag">Go</span>
+            <span class="tag">SQL (PostgreSQL, MySQL, SQLite)</span>
+            <span class="tag">Rust</span>
+          </div>
+        </article>
+        <article class="skill-card reveal reveal-delay-3">
+          <h3>Tools &amp; Technologies</h3>
+          <div class="tag-row">
+            <span class="tag">Git</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Linux</span>
+            <span class="tag">GCP</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Kestra</span>
+            <span class="tag">Jupyter</span>
+            <span class="tag">FastAPI</span>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="section" id="skills">
-      <div class="section-grid">
-        <div class="section-copy reveal">
-          <span class="section-index">01</span>
-          <div class="eyebrow">Skills</div>
-          <h2>Technical Focus</h2>
-          <p class="lead">I focus on programming fundamentals and tooling to deliver dependable software.</p>
-        </div>
-        <div class="cards-grid skills-grid">
-          <article class="card reveal delay-050">
-            <h3>Programming</h3>
-            <div class="tag-row">
-              <span class="tag">Python</span>
-              <span class="tag">Java</span>
-              <span class="tag">C</span>
-            </div>
-          </article>
-          <article class="card reveal delay-100">
-            <h3>Databases</h3>
-            <div class="tag-row">
-              <span class="tag">SQL</span>
-              <span class="tag">NoSQL</span>
-            </div>
-          </article>
-          <article class="card reveal delay-150">
-            <h3>Tools and Platforms</h3>
-            <div class="tag-row">
-              <span class="tag">Docker</span>
-              <span class="tag">Git</span>
-              <span class="tag">Linux</span>
-            </div>
-          </article>
-          <article class="card reveal delay-200">
-            <h3>Ways of Working</h3>
-            <div class="tag-row">
-              <span class="tag">Agile</span>
-              <span class="tag">Scrum</span>
-              <span class="tag">Team player</span>
-            </div>
-          </article>
+    <div class="divider"></div>
+
+    <section class="section" id="projects">
+      <div class="section-header reveal">
+        <span class="section-number">02</span>
+        <div class="section-title-group">
+          <span class="section-label">Projects</span>
+          <h2>Selected Work</h2>
+          <p class="section-lead">End-to-end machine learning projects from data to deployment.</p>
         </div>
       </div>
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-header">
+            <h3>Telco Churn Prediction Service</h3>
+            <span class="project-date">January 2026</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Python</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">CatBoost</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Docker</span>
+          </div>
+          <ul>
+            <li>Built an end-to-end churn prediction pipeline on the Telco Customer Churn dataset: data cleaning, extensive EDA, and feature engineering</li>
+            <li>Trained and tuned a CatBoostClassifier with class-imbalance handling and early stopping; achieved ROC-AUC 0.847</li>
+            <li>Deployed the model as a FastAPI REST service supporting single and batch JSON inference, with Swagger docs and a lightweight test homepage</li>
+            <li>Containerized the application using a multi-stage Docker build for reproducible deployment and portable local serving</li>
+          </ul>
+        </article>
+        <article class="project-card reveal reveal-delay-1">
+          <div class="project-header">
+            <h3>Income Prediction API</h3>
+            <span class="project-date">December 2025</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Uvicorn</span>
+          </div>
+          <ul>
+            <li>Built an end-to-end binary classification project on the UCI Adult Income dataset, including data cleaning, EDA, and feature engineering via a custom scikit-learn transformer</li>
+            <li>Trained a tuned Random Forest pipeline with imputation + one-hot encoding, class-balancing, and evaluation using ROC-AUC/F1/accuracy</li>
+            <li>Deployed the model as a FastAPI service with /predict (single + batch JSON inference) and /health endpoints; containerized the service with Docker for reproducible deployment</li>
+          </ul>
+        </article>
+      </div>
     </section>
+
+    <div class="divider"></div>
 
     <section class="section" id="experience">
-      <div class="section-grid">
-        <div class="section-copy reveal">
-          <span class="section-index">02</span>
-          <div class="eyebrow">Experience</div>
+      <div class="section-header reveal">
+        <span class="section-number">03</span>
+        <div class="section-title-group">
+          <span class="section-label">Experience</span>
           <h2>Internships</h2>
-          <p class="lead">Internships across e-commerce, broadcast operations, and university web teams.</p>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item reveal delay-050">
-            <div class="card timeline-card">
-              <div class="item-top">
-                <h3>Kutugo.com</h3>
-                <span>May&nbsp;–&nbsp;July&nbsp;2025</span>
-              </div>
-              <div class="subtitle">Software Intern - E-commerce</div>
-              <ul>
-                <li>Contributed to development and maintenance of an e-commerce website on the Shopify platform.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item reveal delay-100">
-            <div class="card timeline-card">
-              <div class="item-top">
-                <h3>Global Media Group</h3>
-                <span>July&nbsp;–&nbsp;August&nbsp;2024</span>
-              </div>
-              <div class="subtitle">Summer Intern - Broadcast Operations</div>
-              <ul>
-                <li>Assisted in software automation and IT support to ensure continuous 24/7 broadcast operations.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item reveal delay-150">
-            <div class="card timeline-card">
-              <div class="item-top">
-                <h3>Istanbul Yeni Yuzyil University</h3>
-                <span>April&nbsp;–&nbsp;May&nbsp;2019</span>
-              </div>
-              <div class="subtitle">Software Intern - Web Development</div>
-              <ul>
-                <li>Developed and maintained websites for the university and affiliated units.</li>
-              </ul>
-            </div>
-          </article>
+          <p class="section-lead">Internships across e-commerce and broadcast operations.</p>
         </div>
       </div>
+
+      <div class="timeline">
+        <article class="timeline-entry reveal">
+          <div class="timeline-date">
+            <span class="timeline-year">2025</span>
+            <span class="timeline-range">May &ndash; July</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Kutugo.com</h3>
+            <span class="timeline-role">Software Intern &mdash; E-commerce</span>
+            <ul>
+              <li>Developed and maintained Kutugo's Shopify-based e-commerce store</li>
+              <li>Managed product catalog operations: bulk imports/exports, pricing, inventory checks, and QA</li>
+              <li>Troubleshot storefront issues and implemented performance/content fixes</li>
+            </ul>
+          </div>
+        </article>
+        <article class="timeline-entry reveal reveal-delay-1">
+          <div class="timeline-date">
+            <span class="timeline-year">2024</span>
+            <span class="timeline-range">July &ndash; August</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Global Media Group</h3>
+            <span class="timeline-role">Summer Intern &mdash; Broadcast Operations</span>
+            <ul>
+              <li>Automated routine broadcast operations workflows through scripting to reduce manual effort and improve reliability</li>
+              <li>Validated and deployed updates to broadcast tools/services, performing testing and rollback-ready checks to minimize downtime</li>
+              <li>Deployed and administered a self-hosted RustDesk remote access server on Ubuntu Server, replacing proprietary remote support tooling (AnyDesk) to improve security and operational control</li>
+            </ul>
+          </div>
+        </article>
+      </div>
     </section>
+
+    <div class="divider"></div>
 
     <section class="section" id="education">
-      <div class="section-grid">
-        <div class="section-copy reveal">
-          <span class="section-index">03</span>
-          <div class="eyebrow">Education</div>
+      <div class="section-header reveal">
+        <span class="section-number">04</span>
+        <div class="section-title-group">
+          <span class="section-label">Education</span>
           <h2>Istanbul Bilgi University</h2>
-          <p class="lead">B.S. in Computer Engineering, 2021–2025.</p>
-        </div>
-        <div class="edu-grid">
-          <article class="card reveal delay-050">
-            <h3>Coursework and Focus</h3>
-            <p class="subtitle">Computer Engineering</p>
-            <p>Built a foundation across programming, systems, and software engineering while pursuing hands on projects.</p>
-          </article>
-          <article class="card reveal delay-100">
-            <h3>Certificates</h3>
-            <ul>
-              <li>Data Fundamentals - IBM (May 2024)</li>
-              <li>Supervised ML: Regression and Classification - DeepLearning.AI and Stanford University (April 2024)</li>
-            </ul>
-          </article>
+          <p class="section-lead">BSc in Computer Engineering, 2021&ndash;2025.</p>
         </div>
       </div>
+      <article class="edu-card edu-card-full reveal">
+        <h3>Relevant Coursework</h3>
+        <p class="skill-inline">Machine Learning, Deep Learning, Natural Language Processing, Advanced Data Structures and Algorithms, Probability and Statistics</p>
+      </article>
     </section>
 
-    <section class="contact-section" id="contact">
-      <div class="contact-band reveal">
-        <div class="contact-copy">
-          <div class="eyebrow">Contact</div>
-          <h2>Let&apos;s build something dependable together.</h2>
-          <p class="lead">Email is the fastest way to reach me. I&apos;m excited to contribute to teams where I can learn,
-            iterate, and deliver.</p>
-        </div>
-        <div class="action-row">
-          <a class="btn primary" href="mailto:denizcan.boyraz@gmail.com">Email</a>
-          <a class="btn outline" href="https://github.com/dboyraz/" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a class="btn outline" href="https://linkedin.com/in/dboyraz/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <div class="divider"></div>
+
+    <section class="section section-contact" id="contact">
+      <div class="contact-block reveal">
+        <span class="section-label">Contact</span>
+        <h2 class="contact-heading">Let&apos;s build something<br><em class="rotating-word" data-words="dependable,scalable,meaningful,reliable,impactful">dependable</em><br>together.</h2>
+        <p class="section-lead">Email is the fastest way to reach me. I&apos;m excited to contribute to teams where I
+          can learn, iterate, and deliver.</p>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:denizcan.boyraz@gmail.com">Email</a>
+          <a class="btn btn-outline" href="https://github.com/dboyraz/" target="_blank"
+            rel="noopener noreferrer">GitHub</a>
+          <a class="btn btn-outline" href="https://linkedin.com/in/dboyraz/" target="_blank"
+            rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
     </section>
 
     <footer>
-      <a class="btn small outline" href="#top">Back to top</a>
+      <div class="footer-inner">
+        <a href="#top" class="footer-top">Back to top</a>
+      </div>
     </footer>
   </main>
-  <script src="script.js" defer></script>
 
+  <script src="script.js" defer></script>
 </body>
 
 </html>
