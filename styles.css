@@ -1,7 +1,6 @@
 :root {
   --bg: #0a0a0c;
   --bg-elevated: #111114;
-  --bg-surface: #18181c;
   --text: #e2ddd5;
   --text-muted: #c4bfb7;
   --accent: #c08b3f;
@@ -91,16 +90,6 @@ li:last-child { margin-bottom: 0; }
   align-items: center;
   justify-content: center;
 }
-
-.nav-logo {
-  font-family: var(--display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  transition: color 0.2s;
-}
-.nav-logo:hover { color: var(--accent); }
 
 .nav-toggle {
   display: none;
@@ -766,12 +755,6 @@ h3 {
    Education
    ═══════════════════════════ */
 
-.edu-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
 .edu-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
@@ -788,34 +771,6 @@ h3 {
   max-width: 100%;
 }
 
-.edu-subtitle {
-  display: block;
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
-
-.edu-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.edu-card li {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-  line-height: 1.6;
-}
-.edu-card li:last-child { border-bottom: none; }
-
-.cert-date {
-  display: inline-block;
-  font-size: 0.7rem;
-  color: var(--accent);
-  letter-spacing: 0.06em;
-  margin-left: 4px;
-}
 
 /* ═══════════════════════════
    Contact
@@ -971,17 +926,20 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .nav-inner {
+    justify-content: flex-end;
+  }
+
   .nav-toggle { display: block; z-index: 102; }
 
   .nav-menu {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(10, 10, 12, 0.97);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--bg);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1003,7 +961,6 @@ footer {
   }
 
   .skills-grid { grid-template-columns: 1fr; }
-  .edu-grid { grid-template-columns: 1fr; }
 
   .project-header {
     flex-direction: column;
