@@ -36,6 +36,7 @@ out/
 *.swp
 *~
 .claude
+.zed
 
 # Project-specific
-sys/
+docs/
